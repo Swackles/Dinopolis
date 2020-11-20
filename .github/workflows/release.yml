@@ -11,6 +11,9 @@ jobs:
 
       steps:
         - uses: actions/checkout@v2
+          
+        - name: Files
+          run: ls
 
         - name: Build, Push and Deploy to Heroku
           id: heroku
