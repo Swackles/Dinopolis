@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
 
-namespace Mastermind
+namespace Mastermind.Output
 {
-    public class Output : MonoBehaviour
+    public class Item : MonoBehaviour
     {
-        Main.Result Selected = 0;
+        public Main.Result Selected = 0;
 
         void Awake()
         {
             // Hides all emotions in the start of the round
-            for (int i = 1; i <= 3; i++)
+            for (int i = 0; i <= 3; i++)
             {
                 this.transform.GetChild(i).gameObject.SetActive(false);
             }
@@ -21,8 +21,11 @@ namespace Mastermind
         /// <param name="result">Result to show</param>
         public void Show(Main.Result result)
         {
-            this.transform.GetChild((int)Selected).gameObject.SetActive(false); // Hides active element
-            this.transform.GetChild((int)result).gameObject.SetActive(true); // Shows newly activated one
+            if (result != 0)
+            {
+                this.transform.GetChild((int)Selected).gameObject.SetActive(false); // Hides active element
+                this.transform.GetChild((int)result).gameObject.SetActive(true); // Shows newly activated one
+            }
 
             Selected = result;
         }

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using QFSW.QC;
+using Mastermind.Input;
+using Mastermind.Output;
 
 namespace Mastermind
 {
@@ -10,9 +12,9 @@ namespace Mastermind
     public class Main : MonoBehaviour
     {
         [SerializeField]
-        private OutputContainer Output; // Output to show to the player
+        private History Output; // Output to show to the player
         [SerializeField]
-        private InputFieldContainer Input; // The player input
+        private FieldContainer Input; // The player input
         [SerializeField]
         private Inventory Inventory;
         [Command]
@@ -26,15 +28,11 @@ namespace Mastermind
         }
 
         private void Awake()
-        {            
-            // There must be equal amounts of inputs and outputs
-            if (Output.Count() != Input.Count()) { throw new Exception("IO Count error"); }
-            // If there are more IOs then InventoryItems
-            if (Output.Count() > Inventory.Count()) { throw new Exception("Too many IOs"); }
+        {
 
             List<int> TempSolutions = new List<int>();
             // Generate the solution with length equal to user input lenght
-            for (int i = 0; i < Output.Count(); i++)
+            for (int i = 0; i < Input.Count(); i++)
             {
                 int Number = -1;
                 // Generate one number of solution untill solution already dosen't contain it
@@ -53,7 +51,7 @@ namespace Mastermind
         {
             Main mastermind = FindObjectOfType<Main>();
 
-            InputFieldContainer Input = mastermind.Input;
+            FieldContainer Input = mastermind.Input;
 
             if (!Input.ValuesFilled()) { return; }
 
@@ -78,7 +76,7 @@ namespace Mastermind
             }
 
             // Send output to Output container
-            mastermind.Output.Show(TempOutput.OrderBy(x => x).ToArray());
+            mastermind.Output.Push(TempOutput.OrderBy(x => x).ToArray());
         }
     }
 }

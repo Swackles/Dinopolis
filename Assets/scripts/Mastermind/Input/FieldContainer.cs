@@ -2,10 +2,10 @@
 using UnityEngine;
 using QFSW.QC;
 
-namespace Mastermind
+namespace Mastermind.Input
 {
     [CommandPrefix("Mastermind.Input.")]
-    public class InputFieldContainer : MonoBehaviour
+    public class FieldContainer : MonoBehaviour
     {
         /// <summary>
         /// Gets values of input fields also includes null values
@@ -14,7 +14,7 @@ namespace Mastermind
         [Command]
         public int?[] Values()
         {
-            InputField[] Children = GetComponentsInChildren<InputField>();
+            Field[] Children = GetComponentsInChildren<Field>();
 
             return Children.Select(x => x.Value).ToArray();
         }
@@ -45,7 +45,7 @@ namespace Mastermind
         [Command]
         public int Count()
         {
-           return GetComponentsInChildren<InputField>().Length;
+           return GetComponentsInChildren<Field>().Length;
         }
     }
 }

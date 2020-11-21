@@ -2,9 +2,9 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Mastermind
+namespace Mastermind.Input
 {
-    public class InputField : MonoBehaviour, IDropHandler
+    public class Field : MonoBehaviour, IDropHandler
     {
         public int? Value = null;
         public void OnDrop(PointerEventData eventData)

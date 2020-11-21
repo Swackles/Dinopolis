@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Mastermind.Input;
 
 namespace Mastermind
 {
@@ -11,7 +12,7 @@ namespace Mastermind
         private CanvasGroup CanvasGroup;
         private RectTransform RectTransform;
         private Vector2 StartPos;
-        public InputField InputField; // Use this to refrence to a slot element is in
+        public Field InputField; // Use this to refrence to a slot element is in
         private void Awake()
         {
             RectTransform = GetComponent<RectTransform>();

@@ -6,7 +6,7 @@ namespace Mastermind
     {
         public void Update()
         {
-            if (Input.GetMouseButtonDown(0))
+            if (UnityEngine.Input.GetMouseButtonDown(0))
             {
                 Main.Submit();
             }
