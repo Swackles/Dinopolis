@@ -26,11 +26,11 @@ namespace Mastermind.Output
             {
                 if (i == 0)
                 {
-                    ItemContainers[0].Show(result);
+                    ItemContainers[0].Value = result;
                 }
                 else
                 {
-                    ItemContainers[i].Show(ItemContainers[i - 1].Value());
+                    ItemContainers[i].Value = ItemContainers[i - 1].Value;
                 }
             }
 
