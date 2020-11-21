@@ -16,7 +16,7 @@ namespace Mastermind
         [SerializeField]
         private FieldContainer Input; // The player input
         [SerializeField]
-        private Inventory Inventory;
+        private Inventory.ItemContainer Inventory;
         [Command]
         private int[] Solution; // Solutions
         public enum Result

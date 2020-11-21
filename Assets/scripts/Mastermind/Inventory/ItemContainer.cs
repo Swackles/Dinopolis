@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
 using QFSW.QC;
 
-namespace Mastermind
+namespace Mastermind.Inventory
 {
     [CommandPrefix("Mastermind.Inventory.")]
-    public class Inventory : MonoBehaviour
+    public class ItemContainer : MonoBehaviour
     {
         [Command]
         public int Count()
         {
-            return GetComponentsInChildren<InventoryItem>().Length;
+            return GetComponentsInChildren<Item>().Length;
         }
     }
 }

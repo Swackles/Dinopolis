@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using Mastermind.Input;
 
-namespace Mastermind
+namespace Mastermind.Inventory
 {
-    public class InventoryItem : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
+    public class Item : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
     {
         private Canvas Canvas;
         private CanvasGroup CanvasGroup;

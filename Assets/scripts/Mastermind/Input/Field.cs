@@ -13,7 +13,7 @@ namespace Mastermind.Input
             {
                 eventData.pointerDrag.GetComponent<RectTransform>().position = GetComponent<RectTransform>().position;
 
-                InventoryItem Script = eventData.pointerDrag.GetComponent<InventoryItem>();
+                Inventory.Item Script = eventData.pointerDrag.GetComponent<Inventory.Item>();
                 Script.InputField = this;
                 Value = Int32.Parse(eventData.pointerDrag.gameObject.name);
             }
