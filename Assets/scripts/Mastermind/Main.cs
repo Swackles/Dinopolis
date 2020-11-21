@@ -45,7 +45,11 @@ namespace Mastermind
             Solution = TempSolutions.ToArray();
         }
 
+        /// <summary>
+        /// Submits the input
+        /// </summary>
         [Command]
+        [CommandDescription("Submits the input")]
         public static void Submit()
         {
             Main mastermind = FindObjectOfType<Main>();

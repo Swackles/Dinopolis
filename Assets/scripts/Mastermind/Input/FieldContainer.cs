@@ -8,7 +8,7 @@ namespace Mastermind.Input
     public class FieldContainer : MonoBehaviour
     {
         /// <summary>
-        /// Gets values of input fields also includes null values
+        /// Gets values of input fields
         /// </summary>
         /// <returns></returns>
         [Command]
@@ -23,17 +23,15 @@ namespace Mastermind.Input
         /// Get values of input fields, null values are removed
         /// </summary>
         /// <returns></returns>
-        [Command]
         public int[] SafeValues()
         {
             return Values().Where(x => x != null).Select(x => (int)x).ToArray();
         }
 
         /// <summary>
-        /// Get if all fields are filled
+        /// Are all fields are filled
         /// </summary>
         /// <returns></returns>
-        [Command("ValuesFilled", MonoTargetType.All)]
         public bool ValuesFilled()
         {
             return Values().Length == SafeValues().Length;
@@ -42,7 +40,6 @@ namespace Mastermind.Input
         /// <summary>
         /// Count how many InputSlots exist
         /// </summary>
-        [Command]
         public int Count()
         {
            return GetComponentsInChildren<Field>().Length;

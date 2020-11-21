@@ -4,7 +4,7 @@ using QFSW.QC;
 
 namespace Mastermind.Output
 {
-    [CommandPrefix("mastermind.output.history.")]
+    [CommandPrefix("Mastermind.Output.")]
     public class History : MonoBehaviour
     {
         private ItemContainer[] ItemContainers;

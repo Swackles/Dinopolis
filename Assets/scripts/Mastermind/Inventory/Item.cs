@@ -11,6 +11,7 @@ namespace Mastermind.Inventory
         private RectTransform RectTransform;
         private Vector2 StartPos;
         public Field InputField; // Use this to refrence to a slot element is in
+
         private void Awake()
         {
             RectTransform = GetComponent<RectTransform>();

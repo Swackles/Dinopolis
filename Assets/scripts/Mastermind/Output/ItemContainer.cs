@@ -4,7 +4,7 @@ using QFSW.QC;
 
 namespace Mastermind.Output
 {
-    [CommandPrefix("mastermind.output.container")]
+    [CommandPrefix("Mastermind.Output.")]
     public class ItemContainer : MonoBehaviour
     {
         private Item[] Items;
@@ -15,10 +15,9 @@ namespace Mastermind.Output
         }
 
         /// <summary>
-        /// Show surtain outputs
+        /// Set the current value of outputs
         /// </summary>
         /// <param name="result">Array of results to show</param>
-        [Command]
         public void Show(Main.Result[] result)
         {
             for (int i = 0; i < result.Length; i++)
@@ -28,7 +27,7 @@ namespace Mastermind.Output
         }
 
         /// <summary>
-        /// Get value of current outputs
+        /// Get the current value of outputs
         /// </summary>
         /// <returns></returns>
         [Command]
@@ -47,7 +46,6 @@ namespace Mastermind.Output
         /// <summary>
         /// Count how many Outputs exist
         /// </summary>
-        [Command]
         public int Count()
         {
             return GetComponentsInChildren<Item>().Length;
