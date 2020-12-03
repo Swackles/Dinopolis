@@ -50,15 +50,13 @@ namespace Mastermind
         /// </summary>
         [Command]
         [CommandDescription("Submits the input")]
-        public static void Submit()
+        public void Submit()
         {
-            Main mastermind = FindObjectOfType<Main>();
-
-            FieldContainer Input = mastermind.Input;
+            FieldContainer Input = this.Input;
 
             if (!Input.ValuesFilled()) { return; }
 
-            int[] Solution = mastermind.Solution;
+            int[] Solution = this.Solution;
             int[] Inputs = Input.SafeValues();
             List<Result> TempOutput = new List<Result>();
 
@@ -79,7 +77,7 @@ namespace Mastermind
             }
 
             // Send output to Output container
-            mastermind.Output.Push(TempOutput.OrderBy(x => x).ToArray());
+            this.Output.Push(TempOutput.OrderBy(x => x).ToArray());
         }
     }
 }
