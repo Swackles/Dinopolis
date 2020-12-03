@@ -26,6 +26,8 @@ namespace Mastermind.Inventory
             CanvasGroup.alpha = .6f;
             CanvasGroup.blocksRaycasts = false;
 
+            GameObject.Find("Click").GetComponent<AudioSource>().Play();
+
             // When movement starts and binded to an inputSlot, unbind from that slot
             if (InputField != null)
             {
@@ -43,6 +45,8 @@ namespace Mastermind.Inventory
         {
             CanvasGroup.alpha = 1f;
             CanvasGroup.blocksRaycasts = true;
+
+            GameObject.Find("Drop").GetComponent<AudioSource>().Play();
 
             // If InputSlot is set don't return to the original position
             if (InputField == null)
