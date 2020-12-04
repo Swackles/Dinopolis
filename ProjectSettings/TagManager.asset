@@ -13,8 +13,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Notebook
+  - Background
   - 
   - 
   - 
@@ -47,6 +47,12 @@ TagManager:
   - name: player
     uniqueID: 1989326847
     locked: 0
+  - name: TextBox
+    uniqueID: 3642989107
+    locked: 0
   - name: Inventory
     uniqueID: 37418805
+    locked: 0
+  - name: Notebook
+    uniqueID: 1094657113
     locked: 0
