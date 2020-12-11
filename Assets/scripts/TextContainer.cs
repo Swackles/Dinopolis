@@ -27,6 +27,11 @@ class TextContainer : MonoBehaviour
         TextBoxes = GetComponentsInChildren<Text>().Select(x => x.gameObject).ToArray();
         for (int i = 1; i < TextBoxes.Length; i++)
         {
+            NotebookReveal nr = TextBoxes[i].GetComponent<NotebookReveal>();
+            if (nr != null)
+            {
+                nr.Disable();
+            }
             TextBoxes[i].SetActive(false);
         }
 

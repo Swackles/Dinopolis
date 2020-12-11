@@ -7,9 +7,8 @@ class NotebookReveal : MonoBehaviour
     Image Arrow;
     [SerializeField]
     Image Notebook;
-    private void Awake() {
-        Notebook.color = new Color(1, 1, 1, 0);
-    }
+    bool initialized = false;
+
 
     private void OnEnable()
     {
@@ -20,5 +19,12 @@ class NotebookReveal : MonoBehaviour
     private void OnDisable()
     {
         Arrow.color = new Color(1, 1, 1, 0);
+    }
+
+    public void Disable()
+    {
+        Notebook.color = new Color(1, 1, 1, 0);
+        Arrow.color = new Color(1, 1, 1, 0);
+
     }
 }
