@@ -1,16 +1,18 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using Mastermind.Input;
+using QFSW.QC;
 
 namespace Mastermind.Inventory
 {
-    public class Item : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
+    public class Item : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
     {
         private Canvas Canvas;
         private CanvasGroup CanvasGroup;
         private RectTransform RectTransform;
         private Vector2 StartPos;
-        public Field InputField; // Use this to refrence to a slot element is in
+        public Field InputField = null; // Use this to refrence to a slot element is in
+        public Field InputFieldCache = null;
 
         private void Awake()
         {
@@ -18,22 +20,16 @@ namespace Mastermind.Inventory
             Canvas = GetComponentInParent<Canvas>();
             CanvasGroup = GetComponent<CanvasGroup>();
             StartPos = RectTransform.anchoredPosition;
-            InputField = null;
         }
 
         public void OnBeginDrag(PointerEventData eventData)
         {
+            InputFieldCache = InputField;
+
             CanvasGroup.alpha = .6f;
             CanvasGroup.blocksRaycasts = false;
 
             GameObject.Find("Click").GetComponent<AudioSource>().Play();
-
-            // When movement starts and binded to an inputSlot, unbind from that slot
-            if (InputField != null)
-            {
-                UnbindFromSlot();
-            }
-
         }
 
         public void OnDrag(PointerEventData eventData)
@@ -48,26 +44,38 @@ namespace Mastermind.Inventory
 
             GameObject.Find("Drop").GetComponent<AudioSource>().Play();
 
-            // If InputSlot is set don't return to the original position
-            if (InputField == null)
+            if (InputFieldCache == InputField)
             {
                 ReturnToStart();
+            }
+        }
+
+        /**
+         * Need to use this, cause when InputField has an object binded to it,
+         * dropping another on it will not trigger onDrop on the field cause Item is on top if it
+         */
+        public void OnDrop(PointerEventData eventData)
+        {
+            if (InputField != null) {
+                InputField.OnDrop(eventData);
             }
         }
 
         /// <summary>
         /// Use this method to return DragDrop object to where it started
         /// </summary>
-        private void ReturnToStart()
+        public void ReturnToStart()
         {
+            UnbindFromSlot();
             RectTransform.anchoredPosition = StartPos;
         }
 
         /// <summary>
         /// Unbind element from InputSlot
         /// </summary>
-        private void UnbindFromSlot()
+        public void UnbindFromSlot()
         {
+            if (InputField == null) { return; }
             InputField.Value = null;
             InputField = null;
         }
