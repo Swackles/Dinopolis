@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Collections;
 using System.Linq;
@@ -49,7 +50,7 @@ class TextContainer : MonoBehaviour
             TextBoxes[Active].SetActive(false);
             Active++;
             TextBoxes[Active].SetActive(true);
-
+            Debug.Log(Active);
             switch(Active)
             {
                 case 4:
@@ -67,6 +68,10 @@ class TextContainer : MonoBehaviour
                     StartCoroutine(FadeIn(MoveOn));
                     break;
             }
+        } else
+        {
+            SceneManager.LoadScene(1);
+
         }
     }
 

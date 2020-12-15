@@ -26,7 +26,6 @@ class TypeWriter : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log(partEnded);
         if (partEnded)
         {
             next = true;
