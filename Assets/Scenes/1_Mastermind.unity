@@ -360,6 +360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InputField: {fileID: 0}
+  InputFieldCache: {fileID: 0}
 --- !u!114 &21405014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -447,6 +448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e1096da856d8d4bb0f05f153ab6f6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Binded: {fileID: 0}
 --- !u!114 &25313240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -581,7 +583,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d82e3b59a53cd544ea9eade1098d1831, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2766,6 +2768,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InputField: {fileID: 0}
+  InputFieldCache: {fileID: 0}
 --- !u!114 &704768776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3002,6 +3005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InputField: {fileID: 0}
+  InputFieldCache: {fileID: 0}
 --- !u!114 &738408610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3388,6 +3392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e1096da856d8d4bb0f05f153ab6f6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Binded: {fileID: 0}
 --- !u!114 &810979383
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4322,6 +4327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64e1096da856d8d4bb0f05f153ab6f6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Binded: {fileID: 0}
 --- !u!114 &1019381775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5147,6 +5153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InputField: {fileID: 0}
+  InputFieldCache: {fileID: 0}
 --- !u!114 &1229173889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6411,6 +6418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InputField: {fileID: 0}
+  InputFieldCache: {fileID: 0}
 --- !u!114 &1439536344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8555,6 +8563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InputField: {fileID: 0}
+  InputFieldCache: {fileID: 0}
 --- !u!114 &2022701936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8820,6 +8829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InputField: {fileID: 0}
+  InputFieldCache: {fileID: 0}
 --- !u!114 &2064630282
 MonoBehaviour:
   m_ObjectHideFlags: 0
