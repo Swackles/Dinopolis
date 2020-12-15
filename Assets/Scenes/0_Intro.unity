@@ -1215,10 +1215,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Good news! After following a path for a while, I can see a city. Although
-    the distance might play tricks on my perception, everything seems bigger than
-    you would imagine: The buildings seem to be beyond the usual dimension of human
-    dwellings. Where am I?'
+  m_Text: Good news!<<__STOP__>> After following a path for a while,<<__STOP__>>
+    I can see a city.<<__STOP__>> Although the distance might play tricks on my perception,<<__STOP__>>
+    everything seems bigger than you would imagine:<<__STOP__>> The buildings seem
+    to be beyond the usual dimension of human dwellings.<<__STOP__>> Where am I?
 --- !u!222 &484622096
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1386,9 +1386,9 @@ MonoBehaviour:
     m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: "I walk around among the densely grown vegetation that is hard to pass
-    at times \u2013 always at the lookout for some point to orient myself. As I do
-    so, I realize that there is some kind of broad path traversing the jungle. I
-    follow one.\r\n"
+    at times<<__STOP__>> \u2013 always at the lookout for some point to orient myself.<<__STOP__>>
+    As I do so,<<__STOP__>> I realize that there is some kind of broad path traversing
+    the jungle.<<__STOP__>> I follow one.\r\n"
 --- !u!222 &659328335
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1505,9 +1505,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Following the path leading to the city, I now find myself in close proximity
-    within the city that truly is enormous. Judging by the height of the buildings,
-    it\u2019s hard to believe that they are inhabited by humans. What is this place?\r\n"
+  m_Text: "Following the path leading to the city,<<__STOP__>> I now find myself
+    in close proximity within the city that truly is enormous.<<__STOP__>> Judging
+    by the height of the buildings,<<__STOP__>> it\u2019s hard to believe that they
+    are inhabited by humans.<<__STOP__>> What is this place?\r\n"
 --- !u!222 &665994501
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2675,9 +2676,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Luckily, I found that I had my bag with me that contains my journal and
-    my sketchbook. I decided to write down everything that happens to me in the hope
-    that it might help me later to figure out how to get home. So here I go!
+  m_Text: Luckily,<<__STOP__>> I found that I had my bag with me that contains my
+    journal and my sketchbook.<<__STOP__>> I decided to write down everything that
+    happens to me in the hope that it might help me later to figure out how to get
+    home.<<__STOP__>> So here I go!
 --- !u!222 &1918828632
 CanvasRenderer:
   m_ObjectHideFlags: 0

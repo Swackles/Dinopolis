@@ -22,12 +22,11 @@ class TypeWriter : MonoBehaviour, IPointerClickHandler
         textComp.text = "";
 
         StartCoroutine(Show());
-        
-        GetComponentInParent<TextContainer>().Submit.SetActive(true);
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        Debug.Log(partEnded);
         if (partEnded)
         {
             next = true;
@@ -50,19 +49,21 @@ class TypeWriter : MonoBehaviour, IPointerClickHandler
                 if (skipTypewriter)
                 {
                     textComp.text += texts[i].Remove(0, tempText);
+                    skipTypewriter = false;
                     break;
+                } else
+                {
+                    tempText++;
+                    textComp.text += c;
+                    yield return new WaitForSeconds(0.125f);
                 }
-
-                tempText++;
-                textComp.text += c;
-                yield return new WaitForSeconds(0.125f);
             }
 
-            skipTypewriter = false;
             partEnded = true;
-
-            yield return new WaitUntil(() => next == true);
-
+            yield return new WaitUntil(() => next == true || texts.Length - 1 == i);
+            next = false;
         }
+
+        GetComponentInParent<TextContainer>().Submit.SetActive(true);
     }
 }
