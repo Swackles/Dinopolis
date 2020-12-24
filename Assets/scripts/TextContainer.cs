@@ -7,7 +7,7 @@ using QFSW.QC;
 
 
 [CommandPrefix("TextContainer.")]
-class TextContainer : MonoBehaviour
+class TempTextContainer : MonoBehaviour
 {
     GameObject[] TextBoxes;
     int Active = 0;

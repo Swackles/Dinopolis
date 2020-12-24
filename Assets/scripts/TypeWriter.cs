@@ -12,10 +12,11 @@ class TypeWriter : MonoBehaviour, IPointerClickHandler
     bool next = false; // Go to next text part
     bool partEnded = false; // Text part has finished
     bool skipTypewriter = false;
+    public bool finished = false;
 
     private void Awake()
     {
-        GetComponentInParent<TextContainer>().Submit.SetActive(false);
+        GetComponentInParent<TempTextContainer>()?.Submit.SetActive(false);
 
         textComp = GetComponent<Text>();
         texts = textComp.text.Split(new string[] { "<<__STOP__>>" }, StringSplitOptions.None);
@@ -63,6 +64,7 @@ class TypeWriter : MonoBehaviour, IPointerClickHandler
             next = false;
         }
 
-        GetComponentInParent<TextContainer>().Submit.SetActive(true);
+        finished = true;
+        GetComponentInParent<TempTextContainer>()?.Submit.SetActive(true);
     }
 }
