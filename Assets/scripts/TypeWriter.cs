@@ -2,7 +2,6 @@
 using UnityEngine.UI;
 using System;
 using System.Collections;
-using System.Text.RegularExpressions;
 using UnityEngine.EventSystems;
 
 class TypeWriter : MonoBehaviour, IPointerClickHandler
@@ -16,13 +15,9 @@ class TypeWriter : MonoBehaviour, IPointerClickHandler
 
     private void Awake()
     {
-        GetComponentInParent<TempTextContainer>()?.Submit.SetActive(false);
-
         textComp = GetComponent<Text>();
         texts = textComp.text.Split(new string[] { "<<__STOP__>>" }, StringSplitOptions.None);
         textComp.text = "";
-
-        StartCoroutine(Show());
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -36,7 +31,7 @@ class TypeWriter : MonoBehaviour, IPointerClickHandler
         }
     }
 
-    private IEnumerator Show()
+    public IEnumerator Show()
     {
         for (int i = 0; i < texts.Length; i++)
         {
@@ -65,6 +60,5 @@ class TypeWriter : MonoBehaviour, IPointerClickHandler
         }
 
         finished = true;
-        GetComponentInParent<TempTextContainer>()?.Submit.SetActive(true);
     }
 }
