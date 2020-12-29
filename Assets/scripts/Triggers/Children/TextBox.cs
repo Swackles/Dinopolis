@@ -2,7 +2,7 @@
 using UnityEngine;
 using System.Collections;
 
-namespace Triggers
+namespace Triggers.Children
 {
     class TextBox : MonoBehaviour, IChild
     {

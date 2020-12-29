@@ -19,7 +19,6 @@ class BackgroundContainer: MonoBehaviour
 
     public void Next()
     {
-        Debug.Log(Active);
         if (Backgrounds != null && Active < Backgrounds.Length)
         {
             Backgrounds[Active].color = new Color(1, 1, 1, 0);

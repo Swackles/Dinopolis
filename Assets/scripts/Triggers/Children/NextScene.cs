@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Triggers
+namespace Triggers.Children
 {
     class NextScene : MonoBehaviour, IChild
     {
