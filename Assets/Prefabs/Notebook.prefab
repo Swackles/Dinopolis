@@ -314,6 +314,8 @@ MonoBehaviour:
   Background: {fileID: 6002112912830448296}
   Center: {fileID: 6002112912617279962}
   Submit: {fileID: 6002112911658150385}
+  Page: -1
+  LastPage: -1
 --- !u!1 &6002112912617279962
 GameObject:
   m_ObjectHideFlags: 0
@@ -440,7 +442,7 @@ GameObject:
   - component: {fileID: 6002112912836755524}
   - component: {fileID: 6002112912836755527}
   m_Layer: 8
-  m_Name: Child1
+  m_Name: 0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

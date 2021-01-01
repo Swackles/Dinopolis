@@ -57,7 +57,7 @@ namespace Notebook
             {
                 if (MoveTo == ExpandedPosition && ScaleTo == ExpandedScale)
                 {
-                    GetComponentInParent<NotebookContainer>().Submit.SetActive(true);
+                    GetComponentInParent<NotebookContainer>().ActivePage(int.Parse(this.name));
                     Highlighted = true;
                 } else
                 {

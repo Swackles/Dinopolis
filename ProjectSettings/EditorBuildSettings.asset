@@ -9,11 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Intro.unity
     guid: 7ed643046a81bc943a98427ae83621cc
   - enabled: 1
-    path: Assets/Scenes/Intermission.unity
-    guid: de7d53ee43ccf2c40a4d7ab891f48df4
+    path: Assets/Scenes/Town.unity
+    guid: 83630be337cd993449daf063592fd6d4
   - enabled: 1
     path: Assets/Scenes/Respond.unity
     guid: d75cd5f27e860c64f837e07660bb6a48
+  - enabled: 1
+    path: Assets/Scenes/Intermission.unity
+    guid: de7d53ee43ccf2c40a4d7ab891f48df4
   - enabled: 1
     path: Assets/Scenes/Mastermind.unity
     guid: 482db61cc16fae24bbde3a0115b678fa
