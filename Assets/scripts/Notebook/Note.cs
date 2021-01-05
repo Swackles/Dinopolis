@@ -22,6 +22,8 @@ namespace Notebook
         float scaleSpeed = 1000;
         MoveState State = MoveState.Stand;
         public bool Highlighted = false;
+        [SerializeField]
+        string ActionName = null;
 
         public void Awake()
         {
@@ -50,6 +52,8 @@ namespace Notebook
 
         private void Move(Vector3 MoveTo, Vector3 ScaleTo)
         {
+            MoveTo.z = 100; // For some reason it went outside of canvas
+
             transform.position = Vector3.MoveTowards(transform.position, MoveTo, speed * Time.deltaTime);
             transform.localScale = Vector3.MoveTowards(transform.localScale, ScaleTo, scaleSpeed * Time.deltaTime);
 
@@ -63,9 +67,9 @@ namespace Notebook
                 {
                     Highlighted = false;
                 }
-                    
 
                 State = MoveState.Stand;
+                GetComponent<Animator>().SetTrigger(ActionName);
             }
         }
 
