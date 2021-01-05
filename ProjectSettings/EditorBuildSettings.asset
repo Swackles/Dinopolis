@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Town.unity
     guid: 83630be337cd993449daf063592fd6d4
   - enabled: 1
+    path: Assets/Scenes/Town_2.unity
+    guid: d8700720330b2a044a41d2ad1d0baf4b
+  - enabled: 1
     path: Assets/Scenes/Respond.unity
     guid: d75cd5f27e860c64f837e07660bb6a48
   - enabled: 1
