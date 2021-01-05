@@ -30,6 +30,8 @@ namespace Notebook
             OriginalPosition = transform.position;
             ExpandedPosition = GetComponentInParent<NotebookContainer>().Center.gameObject.transform.position;
 
+            ExpandedPosition.z = 100; // For some reason it went outside of canvas
+
             OriginalScale = transform.localScale;
             ExpandedScale = GetComponentInParent<NotebookContainer>().Center.gameObject.transform.localScale;
         }
@@ -52,8 +54,6 @@ namespace Notebook
 
         private void Move(Vector3 MoveTo, Vector3 ScaleTo)
         {
-            MoveTo.z = 100; // For some reason it went outside of canvas
-
             transform.position = Vector3.MoveTowards(transform.position, MoveTo, speed * Time.deltaTime);
             transform.localScale = Vector3.MoveTowards(transform.localScale, ScaleTo, scaleSpeed * Time.deltaTime);
 
@@ -62,6 +62,7 @@ namespace Notebook
                 if (MoveTo == ExpandedPosition && ScaleTo == ExpandedScale)
                 {
                     GetComponentInParent<NotebookContainer>().ActivePage(int.Parse(this.name));
+                    GetComponent<Animator>().SetTrigger(ActionName);
                     Highlighted = true;
                 } else
                 {
@@ -69,7 +70,6 @@ namespace Notebook
                 }
 
                 State = MoveState.Stand;
-                GetComponent<Animator>().SetTrigger(ActionName);
             }
         }
 

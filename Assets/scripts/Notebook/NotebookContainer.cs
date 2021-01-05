@@ -22,7 +22,6 @@ namespace Notebook
 
         public void ActivePage(int page)
         {
-            LastPage = -1;
             Page = page;
             Submit.SetActive(true);
         }
@@ -31,7 +30,7 @@ namespace Notebook
         {
             LastPage = Page;
             Page = -1;
-            Note Highlighted = GetComponentsInChildren<Note>().FirstOrDefault(x => { return x.Highlighted; });
+            Note Highlighted = GetComponentsInChildren<Note>().FirstOrDefault(x => x.name == LastPage.ToString());
 
             Highlighted.Shrink();
             Submit.SetActive(false);
