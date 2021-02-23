@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 using Notebook;
 
 namespace Triggers.Children
@@ -12,17 +13,17 @@ namespace Triggers.Children
 
         public void StartUp()
         {
-
         }
 
         public void Action()
         {
+            transform.parent.localScale = new Vector3(0, 0, 0);
             StartCoroutine(WaitForFinish());
         }
 
         public void AfterAction()
         {
-
+            transform.parent.localScale = new Vector3(1, 1, 1);
         }
 
         public bool Finished()
