@@ -12,8 +12,35 @@ namespace Notebook
         public GameObject Center = null;
         [SerializeField]
         public GameObject Submit = null;
+        [SerializeField]
+        public int LastActivePage = 0;
+
         public int Page = -1;
         public int LastPage = -1;
+        private Note[] Notes;
+
+        public void Awake()
+        {
+            Notes = GetComponentsInChildren<Note>();
+
+            for (int i = 0; i < Notes.Length; i++)
+            {
+                if (i > LastActivePage)
+                    Notes[i].gameObject.SetActive(false);
+            }
+        }
+
+        public void RevealNext()
+        {
+            foreach (Note note in Notes)
+            {
+                if (!note.gameObject.activeSelf)
+                {
+                    note.gameObject.SetActive(true);
+                    return;
+                }
+            }
+        }
 
         public void ShowHide()
         {

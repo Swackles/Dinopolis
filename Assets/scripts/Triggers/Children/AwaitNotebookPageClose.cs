@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 using Notebook;
 
 namespace Triggers.Children
 {
     class AwaitNotebookPageClose : MonoBehaviour, IChild
     {
+        public NotebookContainer nbc;
         private bool activated = false;
         [SerializeField]
         int Page = 0;
@@ -18,6 +18,7 @@ namespace Triggers.Children
         public void Action()
         {
             transform.parent.localScale = new Vector3(0, 0, 0);
+            nbc.RevealNext();
             StartCoroutine(WaitForFinish());
         }
 
